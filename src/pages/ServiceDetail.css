@@ -1,0 +1,193 @@
+.service-detail__hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.service-detail__hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+.service-detail__hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--black) 0%, transparent 60%);
+}
+.service-detail__hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 3rem;
+  max-width: 700px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--grey-text);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--white); }
+.service-detail__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+.service-detail__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.service-detail__desc {
+  color: var(--grey-text);
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* Gallery */
+.gallery { padding: 4rem 3rem 6rem; }
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* Make some items larger */
+.gallery__item:nth-child(1),
+.gallery__item:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery__item {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.gallery__placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  aspect-ratio: 1;
+}
+.gallery__item:nth-child(1) .gallery__placeholder,
+.gallery__item:nth-child(6) .gallery__placeholder {
+  aspect-ratio: auto;
+  min-height: 420px;
+}
+.gallery__placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery__item:hover img { transform: scale(1.06); }
+
+.gallery__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  transition: background 0.3s;
+}
+.gallery__item:hover .gallery__item-overlay { background: rgba(10,10,10,0.35); }
+.gallery__item-num {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: rgba(201,168,76,0);
+  transition: color 0.3s;
+  letter-spacing: 0.1em;
+}
+.gallery__item:hover .gallery__item-num { color: rgba(201,168,76,0.8); }
+
+/* Placeholder state — no image */
+.gallery__placeholder:not(:has(img[style="display: none;"])) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10,10,10,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  color: var(--white);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  z-index: 201;
+}
+.lightbox__close:hover { opacity: 1; }
+.lightbox__prev, .lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  z-index: 201;
+  padding: 1rem;
+}
+.lightbox__prev:hover, .lightbox__next:hover { opacity: 1; }
+.lightbox__prev { left: 1rem; }
+.lightbox__next { right: 1rem; }
+.lightbox__img-wrap {
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+.lightbox__placeholder {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  min-height: 200px;
+}
+.lightbox__placeholder img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+.lightbox__counter {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--grey-text);
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .gallery { padding: 2rem 1.5rem 4rem; }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery__item:nth-child(1),
+  .gallery__item:nth-child(6) { grid-column: span 1; grid-row: span 1; }
+  .gallery__item:nth-child(1) .gallery__placeholder,
+  .gallery__item:nth-child(6) .gallery__placeholder { min-height: 200px; aspect-ratio: 1; }
+  .service-detail__hero-content { padding: 3rem 1.5rem; }
+}
