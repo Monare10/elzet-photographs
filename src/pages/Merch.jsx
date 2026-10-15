@@ -12,12 +12,16 @@ export default function MerchPage() {
 
   return (
     <main className="merch-page">
-      <div className="page-hero">
-        <span className="section-eyebrow">Official Merchandise</span>
-        <h1 className="page-title">Elzet Merch</h1>
-        <p className="page-sub">
-          Wear the brand. Exclusive pieces for those who appreciate the art of the lens.
-        </p>
+      <div className="page-hero page-hero--imaged">
+        <div className="page-hero__bg" />
+        <div className="page-hero__overlay" />
+        <div className="page-hero__content">
+          <span className="section-eyebrow">Official Merchandise</span>
+          <h1 className="page-title">Elzet Merch</h1>
+          <p className="page-sub">
+            Wear the brand. Exclusive pieces for those who appreciate the art of the lens.
+          </p>
+        </div>
       </div>
 
       <div className="merch-note">

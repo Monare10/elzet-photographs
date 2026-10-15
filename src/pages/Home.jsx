@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Camera, Award, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { services } from '../data/services';
 import './Home.css';
 
@@ -34,25 +34,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="stats">
-        <div className="stat">
-          <Camera size={28} className="stat__icon" />
-          <div className="stat__number">500+</div>
-          <div className="stat__label">Sessions Captured</div>
-        </div>
-        <div className="stat">
-          <Award size={28} className="stat__icon" />
-          <div className="stat__number">8</div>
-          <div className="stat__label">Service Categories</div>
-        </div>
-        <div className="stat">
-          <Users size={28} className="stat__icon" />
-          <div className="stat__number">100%</div>
-          <div className="stat__label">Client Satisfaction</div>
-        </div>
-      </section>
-
+     
       {/* Services Grid */}
       <section className="home-services">
         <div className="section-header">

@@ -98,3 +98,29 @@
   .service-row__body { padding: 2rem 1.5rem; }
   .service-row__number { font-size: 3rem; }
 }
+
+/* Imaged page hero (Merch + Contact) */
+.page-hero--imaged {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero--imaged .page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/homepage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-hero--imaged .page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.75);
+}
+
+.page-hero--imaged .page-hero__content {
+  position: relative;
+  z-index: 2;
+}

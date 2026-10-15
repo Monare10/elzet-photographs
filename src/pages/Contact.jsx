@@ -57,12 +57,16 @@ const contacts = [
 export default function ContactPage() {
   return (
     <main className="contact-page">
-      <div className="page-hero">
-        <span className="section-eyebrow">Get in Touch</span>
-        <h1 className="page-title">Contact Us</h1>
-        <p className="page-sub">
-          Ready to work with us? Reach out on any of the platforms below and we'll get back to you.
-        </p>
+      <div className="page-hero page-hero--imaged">
+        <div className="page-hero__bg" />
+        <div className="page-hero__overlay" />
+        <div className="page-hero__content">
+          <span className="section-eyebrow">Get in Touch</span>
+          <h1 className="page-title">Contact Us</h1>
+          <p className="page-sub">
+            Ready to work with us? Reach out on any of the platforms below and we'll get back to you.
+          </p>
+        </div>
       </div>
 
       <div className="contact-cards">
