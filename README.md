@@ -53,24 +53,7 @@ Production Build
 bash
 npm run build
 npm run preview
-📁 Project Structure
-text
-elzet-photographs/
-├── public/
-│   ├── images/           # Hero + banner imagery
-│   └── logo.jpg          # Brand logo
-├── src/
-│   ├── components/       # Reusable UI pieces (Navbar, Footer, etc.)
-│   ├── data/             # Services + merchandise data
-│   ├── pages/
-│   │   ├── Home.jsx      # Landing page (hero, services, merch CTA)
-│   │   ├── Services.jsx  # All service categories
-│   │   ├── Merch.jsx     # Branded merchandise catalog
-│   │   └── Contact.jsx   # Contact + social links
-│   ├── App.jsx           # Routes + layout
-│   ├── main.jsx          # Entry point
-│   └── index.css         # Global styles + design tokens
-└── vite.config.js
+
 🎨 Design System
 The site uses a small set of design tokens defined in src/index.css:
 
